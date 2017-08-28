@@ -15,6 +15,9 @@
         </div>
       {% endif %}
 
+      {% if page.yasong %}
+        {% include yasong.html %}
+      {% endif %}
       <div class="text">
         {{content}}
       </div>
