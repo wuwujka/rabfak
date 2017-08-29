@@ -1,3 +1,12 @@
-<div class="song">
-  <iframe frameborder="0" style="border:none;width:600px;height:100px;" width="600" height="100" src="https://music.yandex.ru/iframe/#track/{{page.yasong}}/{{page.yaalbum}}/"></iframe>
-</div>
+{% if page.song %}
+  <br>
+  <div class="song">
+    {{ page.song }}
+  </div>
+{% endif %}
+{% if page.yasong %}
+  <br>
+  <div class="song">
+    <iframe frameborder="0" style="border:none;width:auto;height:100px;" width="auto" height="100" src="https://music.yandex.ru/iframe/#track/{{page.yasong}}/{{page.yaalbum}}/"></iframe>
+  </div>
+{% endif %}

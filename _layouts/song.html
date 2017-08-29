@@ -1,40 +1,51 @@
 <html>
   <head>
   <meta charset=utf8>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/style.css">
 
   </head>
   <body>
-    <div class="content">
-      {% include menu.html %}
-      <hr>
-      <h1>{{page.name}}</h1>
-      {% if page.song %}
-        <div class="song">
-          {{ page.song }}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {% include menu.html %}
         </div>
-      {% endif %}
-
-      {% if page.yasong %}
-        {% include yasong.html %}
-      {% endif %}
-      <div class="text">
-        {{content}}
       </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>{{page.name}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          {% if page.officialyoutube %}
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{page.officialyoutube}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          {% endif %}
+          {% if page.liveyoutube %}
+            <hr>
+            <h2>Живое исполнение</h2>
+            {% for id in page.liveyoutube %}
+              <iframe width="390" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
+            {% endfor %}
+          {% endif %}
+          {% include yasong.html %}
+        </div>
 
-      {% if page.officialyoutube %}
-        <hr>
-        <h2>Клип</h2>
-        <iframe width="390" height="315" src="https://www.youtube.com/embed/{{page.officialyoutube}}" frameborder="0" allowfullscreen></iframe>
-      {% endif %}
-      {% if page.liveyoutube %}
-        <hr>
-        <h2>Живое исполнение</h2>
-        {% for id in page.liveyoutube %}
-          <iframe width="390" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
-        {% endfor %}
-      {% endif %}
-      {% include footer.html %}
+        <div class="col-xs-6">
+          <div class="text">
+            {{content}}
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+            {% include footer.html %}
+        </div>
+      </div>
     </div>
   </body>
 </html>
