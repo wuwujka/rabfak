@@ -1,0 +1,28 @@
+h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.logo{
+  color: #E72501;
+  font-size: 40px;
+}
+.menu{
+  line-height: 70px;
+  font-size: 20px;
+}
+.menu a{
+  margin-right: 20px;
+}
+
+.text{
+  font-family: georgia;
+  font-size: 20px;
+}
+
+.header{
+  padding-top: 30px;
+}
+
+.page-header{
+  margin: 0px 0px 40px 0px;
+}
