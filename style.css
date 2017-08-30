@@ -2,6 +2,13 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
   font-family: 'Rubik Mono One', sans-serif;
 }
 
+a{
+  text-decoration: underline;
+}
+a:visited{
+  color: #690079;
+}
+
 .logo{
   color: #E72501;
   font-size: 40px;
