@@ -56,6 +56,15 @@
               </div>
             {% endfor %}
           {% endif %}
+          {% if page.coveryoutube %}
+            <hr>
+            <h2>Каверы</h2>
+            {% for id in page.coveryoutube %}
+              <div class="embed-responsive embed-responsive-4by3">
+                <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
 
         <div class="col-xs-6">
