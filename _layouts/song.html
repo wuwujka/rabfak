@@ -34,14 +34,28 @@
               <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{page.officialyoutube}}" frameborder="0" allowfullscreen></iframe>
             </div>
           {% endif %}
+          {% include yasong.html %}
+          {% if page.links %}
+            <hr>
+            <h2>Ссылки</h2>
+            <ul>
+              {% for link in page.links %}
+                <li>
+                  {{ page.links | join: '<br>' }}
+                </li>
+              {% endfor %}
+
+            </ul>
+          {% endif %}
           {% if page.liveyoutube %}
             <hr>
             <h2>Живое исполнение</h2>
             {% for id in page.liveyoutube %}
-              <iframe width="390" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
+              <div class="embed-responsive embed-responsive-4by3">
+                <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
+              </div>
             {% endfor %}
           {% endif %}
-          {% include yasong.html %}
         </div>
 
         <div class="col-xs-6">
