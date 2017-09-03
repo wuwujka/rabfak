@@ -4,6 +4,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
 
   </head>
   <body>
@@ -29,11 +30,7 @@
       </div>
       <div class="row">
         <div class="col-xs-6">
-          {% if page.officialyoutube %}
-            <div class="embed-responsive embed-responsive-4by3">
-              <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{page.officialyoutube}}" frameborder="0" allowfullscreen></iframe>
-            </div>
-          {% endif %}
+          {% include video.html %}
           {% include yasong.html %}
           {% if page.links %}
             <hr>
@@ -47,26 +44,7 @@
 
             </ul>
           {% endif %}
-          {% if page.liveyoutube %}
-            <hr>
-            <h2>Живое исполнение</h2>
-            {% for id in page.liveyoutube %}
-              <div class="embed-responsive embed-responsive-4by3">
-                <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
-              </div>
-            {% endfor %}
-          {% endif %}
-          {% if page.coveryoutube %}
-            <hr>
-            <h2>Каверы</h2>
-            {% for id in page.coveryoutube %}
-              <div class="embed-responsive embed-responsive-4by3">
-                <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
-              </div>
-            {% endfor %}
-          {% endif %}
         </div>
-
         <div class="col-xs-6">
           <div class="text">
             {{content}}

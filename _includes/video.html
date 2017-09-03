@@ -1,0 +1,46 @@
+{% if page.videos.size > 0 %}
+  <script>
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
+  var videos = {{ page.videos | map: 'id' |  jsonify }};
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      videoId: {{ page.videos | map: 'id' | first | jsonify }},
+      playerVars: { 'autoplay': 0, 'controls': 1 },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+    function onPlayerReady(event) {
+      $('.tn:first').addClass('active');
+      $('.tn').click(function(){
+        var self = $(this);
+        $('.tn.active').removeClass('active');
+        self.addClass('active');
+        player.loadVideoById(self.data('id'));
+        return false;
+      });
+    }
+  }
+  </script>
+
+  <div class="embed-responsive embed-responsive-4by3">
+    <div id='player'></div>
+  </div>
+
+
+  <div class="tns">
+    {% for video in page.videos %}
+      <a class='tn' data-id="{{video.id}}">
+        <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt=""><br>
+        <span class="type">{{video.type}}</span>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
