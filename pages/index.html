@@ -3,14 +3,13 @@ layout: default
 title: "Творчество"
 permalink: index.html
 ---
-{% assign by_album = site.songs | group_by: 'album' %}
-{% for t in by_album %}
-  <h3>{{t.name}}</h3>
-  <ul>
-    {% for song in t.items %}
-      <li>
-        <a href="{{song.url}}">{{ song.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<div class="row">
+  <div class="col-xs-6">
+    {% include tracklist.html album="wave" %}
+    {% include tracklist.html album="durdom" %}
+    {% include tracklist.html album="demo" %}
+  </div>
+  <div class="col-xs-6">
+    {% include tracklist.html album="misc" %}
+  </div>
+</div>

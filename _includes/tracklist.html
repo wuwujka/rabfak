@@ -1,0 +1,14 @@
+{% assign by_album = site.songs | group_by: 'album' %}
+{% for t in by_album %}
+  {% if t.name == include.album %}
+    {% assign meta = site.data.albums[t.name]%}
+    <h3>{{meta.name}}</h3>
+    <ul>
+      {% for song in t.items %}
+        <li>
+          <a href="{{song.url}}">{{ song.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endfor %}
