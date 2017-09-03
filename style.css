@@ -33,3 +33,9 @@ a:visited{
 .page-header{
   margin: 0px 0px 40px 0px;
 }
+
+.created-date{
+  font-family: georgia;
+  font-size: 30px;
+  color: #ccc;
+}
