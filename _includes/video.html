@@ -33,14 +33,14 @@
   <div class="embed-responsive embed-responsive-4by3">
     <div id='player'></div>
   </div>
-
-
-  <div class="tns">
-    {% for video in page.videos %}
-      <a class='tn' data-id="{{video.id}}">
-        <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt=""><br>
-        <span class="type">{{video.type}}</span>
-      </a>
-    {% endfor %}
-  </div>
+  {% if page.videos.size > 1 %}
+    <div class="tns">
+      {% for video in page.videos %}
+        <a class='tn' data-id="{{video.id}}">
+          <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt=""><br>
+          <span class="type">{{video.type}}</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endif %}
