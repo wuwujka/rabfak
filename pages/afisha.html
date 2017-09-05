@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Концерты"
+---
+{% for event in site.concerts %}
+  <div class="media">
+    <!--
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="..." alt="...">
+      </a>
+    </div>
+    -->
+    <div class="media-body">
+      <h4 class="media-heading">{{event.place.name}} - {{event.date | date_to_string}}</h4>
+      {% include video-popup.html videos=event.videos %}
+    </div>
+  </div>
+{% endfor %}

@@ -7,3 +7,5 @@ defaults:
 collections:
   songs:
     output: true
+  concerts:
+    output: false

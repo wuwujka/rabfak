@@ -1,0 +1,10 @@
+<div class="tns">
+  {% for video in include.videos %}
+    <a class='tn' data-id="{{video.id}}">
+      <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt=""><br>
+      {% if video.type %}
+        <span class="type">{{video.type}}</span>
+      {% endif %}
+    </a>
+  {% endfor %}
+</div>
