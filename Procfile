@@ -1,1 +1,1 @@
-web: jekyll serve --port 3000
+web: jekyll serve --incremental --port 3000
