@@ -6,12 +6,11 @@ title: "Пресса"
 {% for p in site.press %}
   <li>
     <i>{{p.date | date_to_string}}</i>
+    - <a href="{{p.source}}">{{p.publisher}}</a> -
     <a href="{{p.url}}">
       {{p.title}}
     </a>
-    <sup>
-      <a href="{{p.source}}">оригинал</a>
-    </sup>
+    <p>{{p.excerpt}}</p>
   </li>
 {% endfor %}
 </ul>
