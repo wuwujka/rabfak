@@ -9,3 +9,12 @@
   </a>
   </dd>
 </dl>
+
+<div class="photos">
+  {% for p in page.photos %}
+    <div class="photo img-responsive">
+      <img src="/assets/{{p.file}}">
+      <small>{{p.credit}}</small>
+    </div>
+  {% endfor %}
+</div>
