@@ -12,8 +12,8 @@
 
 <div class="photos">
   {% for p in page.photos %}
-    <div class="photo img-responsive">
-      <img src="/assets/{{p.file}}">
+    <div class="photo">
+      <img src="/assets/{{p.file}}" class='img-responsive'>
       <small>{{p.credit}}</small>
     </div>
   {% endfor %}

@@ -4,7 +4,9 @@ html, html body{
 h1, h2, h3, h4, .h1, .h2, .h3, .h4{
   font-family: 'Rubik Mono One', sans-serif;
 }
-
+p{
+  margin: 0 0 2rem;
+}
 h1 {
   font-size: 1.5rem;
 }
@@ -68,6 +70,7 @@ max-width: 100px;
   position: absolute;
   bottom: 0px;
   right: 3px;
+  font-size: 14px;
   color: white;
   font-weight: bold;
 }
