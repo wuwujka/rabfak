@@ -1,1 +1,1 @@
-web: jekyll serve --incremental --port 3000
+web: bundle exec jekyll serve --incremental --port 3000
