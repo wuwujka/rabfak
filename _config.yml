@@ -4,8 +4,15 @@ defaults:
       type: songs
     values:
       layout: song
+  - scope:
+      path: ""
+      type: press
+    values:
+      layout: press
 collections:
   songs:
     output: true
   concerts:
     output: false
+  press:
+    output: true

@@ -3,16 +3,15 @@ layout: default
 title: "Пресса"
 ---
 <ul>
+{% for p in site.press %}
   <li>
-    <b>Forbes</b> <i>2011.12.12</i> <a href="http://www.forbes.ru/sobytiya/lyudi/77298-kogda-durdomy-otchityvayutsya-chto-progolosovali-pravilno-uzhe-ponyatno-chto-pr">Группа «Рабфак: «Когда дурдом отчитывается, что проголосовал «правильно», понятно, что происходит»</a>
-  </li>
-  <li>
-    <b>os.colta.ru</b> <i>2012.02.03</i> <a href="http://os.colta.ru/music_modern/events/details/34018/?expand=yes">Александр Семенов из «РабФака»: «Я был уволен с формулировкой “за идиотские политические взгляды”»</a>
-  </li>
-  <li>
-    <b>znak.com</b> <i>2015.01.13</i>
-    <a href="https://www.znak.com/2015-01-13/no_segodnya_ne_vremya_frontmen_gruppy_rabfak_o_tom_pochemu_rokery_bolshe_ne_protestuyut">
-      «Когда война закончится, мы с Путина еще спросим»
+    <i>{{p.date | date_to_string}}</i>
+    <a href="{{p.url}}">
+      {{p.title}}
     </a>
+    <sup>
+      <a href="{{p.source}}">оригинал</a>
+    </sup>
   </li>
+{% endfor %}
 </ul>
